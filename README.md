@@ -1,4 +1,6 @@
 # NorthwindProject
+#
+ASP.NET yol haritamda katmanlı mimari yapısını öğrenmek için Northwind veritabanını da kullanarak geliştirdiğim; veritabanındaki ürünleri listeleme, aynı sessionda sepete ekleme/sepetten silme, sipariş oluşturma gibi işlemleri olan temel seviye bir çalışma.
 
 
 ![Image](https://github.com/user-attachments/assets/e3ccd881-2fef-4cf8-81ce-e678d87c9295)
