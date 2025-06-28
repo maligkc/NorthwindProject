@@ -1,0 +1,43 @@
+﻿@model ShippingDetailsViewModel
+
+@{
+    ViewData["Title"] = "Complete";
+}
+
+<form asp-controller="Sepet" asp-action="Complete" method="post">
+    <div class="form-group">
+        <label asp-for="ShippingDetail.FirstName">Ad</label>
+        <input asp-for="ShippingDetail.FirstName" class="form-control" placeholder="Müşteri adı"/>
+        <span style="color:red" asp-validation-for="ShippingDetail.FirstName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ShippingDetail.lastName">Soyad</label>
+        <input asp-for="ShippingDetail.lastName" class="form-control" placeholder="Müşteri soyadı" />
+        <span style="color:red" asp-validation-for="ShippingDetail.lastName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ShippingDetail.email">E-posta</label>
+        <input asp-for="ShippingDetail.email" class="form-control" placeholder="E-posta" />
+        <span style="color:red" asp-validation-for="ShippingDetail.email"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ShippingDetail.age">Yaş</label>
+        <input asp-for="ShippingDetail.age" class="form-control" placeholder="Müşteri yaşı" />
+        <span style="color:red" asp-validation-for="ShippingDetail.age"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ShippingDetail.city">Şehir</label>
+        <input asp-for="ShippingDetail.city" class="form-control" placeholder="Şehir" />
+        <span style="color:red" asp-validation-for="ShippingDetail.city"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ShippingDetail.adress">Adres</label>
+        <input asp-for="ShippingDetail.adress" class="form-control" placeholder="Adres" />
+        <span style="color:red" asp-validation-for="ShippingDetail.adress"></span>
+    </div>
+    <input type="submit" value="Kaydet" class="btn btn-success btn-group-sm" />
+
+
+
+</form>
+

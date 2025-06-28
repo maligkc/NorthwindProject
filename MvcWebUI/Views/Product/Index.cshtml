@@ -1,0 +1,45 @@
+﻿@model ProductListViewModel
+@{
+    ViewData["Title"] = "View";
+    Layout = "_Layout";
+}
+
+<h2>Ürünler</h2>
+<hr />
+<table class="table table-responsive">
+    <thead>
+        <th>Id</th>
+        <th>Ürün İsmi</th>
+        <th>Birim Başına Miktar</th>
+        <th>Birim Fiyat</th>
+        <th>Stoktaki Ürünler</th>
+    </thead>
+
+    <tbody>
+        @foreach (var product in Model.Products)
+        {
+            <tr class="table table-responsive">
+                <td>@product.ProductID</td>
+                <td>@product.ProductName</td>
+                <td>@product.QuantityPerUnit</td>
+                <td>@product.UnitPrice</td>
+                <td>@product.UnitsInStock</td>
+                <td>
+                    @* <a class="btn btn-success btn-sm" asp-controller="Sepet" asp-action="SepeteEkle" asp-route-productId="@product.ProductID">Sepete Ekle</a> *@
+                    @{
+                        var currentCategoryId = ViewBag.CurrentCategoryId ?? 0;
+                    }
+                    <a href="@Url.Action("SepeteEkle", "Sepet", new { productId = product.ProductID, categoryId = currentCategoryId })" class="btn btn-success">Sepete Ekle</a>
+
+
+                </td>
+
+            </tr>
+
+        }
+    </tbody>
+
+
+   
+</table>
+

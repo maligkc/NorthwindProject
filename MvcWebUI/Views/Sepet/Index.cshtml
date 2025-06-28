@@ -1,0 +1,44 @@
+﻿@model SepetListViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Sepetiniz</h1>
+@if(Model.Sepet.SepetUrunDetaylari.Count == 0)
+{
+    <hr />
+    <h2>Sepetiniz Boş</h2>
+}
+else
+{
+    <table class="table table-responsive">
+
+    <thead>
+        <th>Id</th>
+        <th>Ürün Adı</th>
+        <th>Açıklama</th>
+        <th>Fiyat</th>
+        <th>Stok Adedi</th>
+        <th>Satış Adedi</th>
+    </thead>
+
+    <tbody>
+        @foreach (var sepet in Model.Sepet.SepetUrunDetaylari)
+        {
+            <tr>
+                <td>@sepet.Product.ProductID</td>
+                <td>@sepet.Product.ProductName</td>
+                <td>@sepet.Product.QuantityPerUnit</td>
+                <td>@sepet.Product.UnitPrice</td>
+                <td>@sepet.Product.UnitsInStock</td>
+                <td>@sepet.urunSayisi</td>
+                <td><a class="btn btn-danger btn-sm" asp-controller="Sepet" asp-action="SepettenCikar" asp-route-productId="@sepet.Product.ProductID">Sepetten Kaldır</a></td>
+
+            </tr>
+        }
+    </tbody>
+    
+</table>
+<a class="btn btn-primary" href="/sepet/complete">Sepeti Onayla</a>
+}
+
